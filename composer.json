@@ -1,0 +1,26 @@
+{
+  "name": "alphatechnologies/crudzen",
+  "description": "A Laravel Livewire CRUD package with dynamic table and form handling",
+  "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "AlphaTechnologies\\CRUDZen\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "AlphaTechnologies\\CRUDZen\\CRUDZenServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "laravel/framework": ">=10.0",
+    "livewire/livewire": "^3.0"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
