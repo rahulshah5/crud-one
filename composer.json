@@ -1,18 +1,18 @@
 {
-  "name": "alphatechnologies/crudone",
+  "name": "rahulshah/crudone",
   "description": "A Laravel Livewire CRUD package with dynamic table and form handling",
   "version": "1.0.0",
   "type": "library",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "AlphaTechnologies\\CRUDOne\\": "src/"
+      "RahulShah\\CRUDOne\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "AlphaTechnologies\\CRUDOne\\CRUDOneServiceProvider"
+        "RahulShah\\CRUDOne\\CRUDOneServiceProvider"
       ]
     }
   },

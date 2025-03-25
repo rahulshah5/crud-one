@@ -25,13 +25,13 @@ CRUDOne is a powerful Laravel Livewire package that simplifies CRUD operations w
 Install the package via Composer:
 
 ```bash
-composer require alphatechnologies/crudone
+composer require rahulshah/crudone
 ```
 
 Publish the assets:
 
 ```bash
-php artisan vendor:publish --provider="AlphaTechnologies\CRUDOne\CRUDOneServiceProvider" --tag="crudone"
+php artisan vendor:publish --provider="RahulShah\CRUDOne\CRUDOneServiceProvider" --tag="crudone"
 ```
 
 ## Basic Usage

@@ -1,10 +1,10 @@
 <?php
 
-namespace AlphaTechnologies\CRUDOne;
+namespace RahulShah\CRUDOne;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use AlphaTechnologies\CRUDOne\Livewire\Table;
+use RahulShah\CRUDOne\Livewire\Table;
 
 class CRUDOneServiceProvider extends ServiceProvider
 {
