@@ -7,6 +7,7 @@ CRUDOne is a powerful Laravel Livewire package that simplifies CRUD operations w
 - PHP 8.1+
 - Laravel 10.0+
 - Livewire 3.0+
+- Bootstrap 5.0+ (CSS and JS)
 
 ## Features
 
@@ -32,6 +33,43 @@ Publish the assets:
 
 ```bash
 php artisan vendor:publish --provider="RahulShah\CRUDOne\CRUDOneServiceProvider" --tag="crudone"
+```
+
+### Livewire Configuration
+
+Make sure Livewire is properly configured in your application. Add the Livewire scripts and styles to your layout:
+
+```html
+<!-- In your blade layout file -->
+<html>
+  <head>
+    <!-- ... -->
+    @livewireStyles
+  </head>
+  <body>
+    <!-- ... -->
+    @livewireScripts
+  </body>
+</html>
+```
+
+### Bootstrap Requirement
+
+This package uses Bootstrap 5 for styling. Make sure to include Bootstrap CSS and JS in your application:
+
+```html
+<!-- In your blade layout file -->
+<head>
+  <!-- ... -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- ... -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 ```
 
 ## Basic Usage
@@ -67,12 +105,12 @@ class YourModelList extends Component
 
     public $title = 'Your Model';
     public $model = YourModel::class;
-    
+
     public $storerules = [
         'formData.name' => 'required|string|max:255',
         'formData.description' => 'required|string'
     ];
-    
+
     public $updaterules = [
         'formData.name' => 'required|string|max:255',
         'formData.description' => 'required|string'
@@ -89,13 +127,14 @@ class YourModelList extends Component
 
 ```html
 <div>
-    <livewire:table 
-        wire:model="tableData"
-        :storerules="$storerules"
-        :updaterules="$updaterules"
-        :model="$model"
-        :title="$title"
-        :componentClass="static::class" />
+  <livewire:table
+    wire:model="tableData"
+    :storerules="$storerules"
+    :updaterules="$updaterules"
+    :model="$model"
+    :title="$title"
+    :componentClass="static::class"
+  />
 </div>
 ```
 
@@ -103,15 +142,15 @@ class YourModelList extends Component
 
 ### Table Options
 
-| Option | Type | Description |
-|--------|------|-------------|
-| `add` | bool | Enable add functionality |
-| `edit` | bool | Enable edit functionality |
-| `delete` | bool | Enable delete functionality |
-| `form` | string | Path to form component |
-| `table_fields` | array | Fields to display |
-| `search_fields` | array | Searchable fields |
-| `sortable` | array | Sortable fields |
+| Option          | Type   | Description                 |
+| --------------- | ------ | --------------------------- |
+| `add`           | bool   | Enable add functionality    |
+| `edit`          | bool   | Enable edit functionality   |
+| `delete`        | bool   | Enable delete functionality |
+| `form`          | string | Path to form component      |
+| `table_fields`  | array  | Fields to display           |
+| `search_fields` | array  | Searchable fields           |
+| `sortable`      | array  | Sortable fields             |
 
 ### Foreign Key Handling
 
@@ -129,10 +168,12 @@ class YourModelList extends Component
 ### File Uploads
 
 ```html
-<input type="file" 
-       class="file:bg-primary file:text-white"
-       name="image" 
-       id="image">
+<input
+  type="file"
+  class="file:bg-primary file:text-white"
+  name="image"
+  id="image"
+/>
 ```
 
 ## Custom Operations
@@ -155,10 +196,9 @@ public function alterFormData($formData)
 }
 ```
 
-
 I'll update the README.md file to include the proper instructions for registering the Table component in the AppServiceProvider.php.
 
-```markdown:e:\Coding Workspace\Alpha\Package Test\package-test\AlphaTechnologies\CRUDZen\README.md
+````markdown:e:\Coding Workspace\Alpha\Package Test\package-test\AlphaTechnologies\CRUDZen\README.md
 // ... existing code ...
 
 ## Custom Operations
@@ -179,7 +219,7 @@ public function alterFormData($formData)
     $formData['slug'] = Str::slug($formData['title']);
     return $formData;
 }
-```
+````
 
 ## Register Table Component
 
@@ -212,4 +252,7 @@ This step is necessary if you've published the Table component to your applicati
 ## License
 
 [MIT License](https://opensource.org/licenses/MIT)
+
+```
+
 ```
