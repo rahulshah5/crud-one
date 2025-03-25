@@ -155,30 +155,61 @@ public function alterFormData($formData)
 }
 ```
 
-## Complete Example
 
-### Blog Model
+I'll update the README.md file to include the proper instructions for registering the Table component in the AppServiceProvider.php.
+
+```markdown:e:\Coding Workspace\Alpha\Package Test\package-test\AlphaTechnologies\CRUDZen\README.md
+// ... existing code ...
+
+## Custom Operations
+
+Implement these methods in your component:
+
+- `alterFormData($formData)`
+- `beforeCreateOperations()`
+- `afterCreateOperations($model)`
+- `beforeUpdateOperations($model)`
+- `afterUpdateOperations($model)`
+
+Example:
+
+```php
+public function alterFormData($formData)
+{
+    $formData['slug'] = Str::slug($formData['title']);
+    return $formData;
+}
+```
+
+## Register Table Component
+
+Add the following code to your `AppServiceProvider.php` to manually register the Table component:
 
 ```php
 <?php
 
-namespace App\Models;
+namespace App\Providers;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
+use App\Livewire\Table;
 
-class Blog extends Model
+class AppServiceProvider extends ServiceProvider
 {
-    protected $fillable = ['title', 'description'];
-    
-    public function image()
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
     {
-        return $this->morphMany(Image::class, 'imageable');
+        // Register the Table component with the alias 'table'
+        Livewire::component('table', Table::class);
     }
 }
 ```
 
+This step is necessary if you've published the Table component to your application's Livewire directory and want to use it with a custom namespace.
+
 ## License
 
 [MIT License](https://opensource.org/licenses/MIT)
-
 ```
