@@ -6,6 +6,6 @@ return [
     ],
     'image' => [
         'max_size' => 2048,
-        'storage_path' => 'public/crudzen',
+        'storage_path' => 'public/crudone',
     ]
 ];

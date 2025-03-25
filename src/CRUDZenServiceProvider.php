@@ -1,12 +1,12 @@
 <?php
 
-namespace AlphaTechnologies\CRUDZen;
+namespace AlphaTechnologies\CRUDOne;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use AlphaTechnologies\CRUDZen\Livewire\Table;
+use AlphaTechnologies\CRUDOne\Livewire\Table;
 
-class CRUDZenServiceProvider extends ServiceProvider
+class CRUDOneServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -20,24 +20,24 @@ class CRUDZenServiceProvider extends ServiceProvider
             __DIR__ . '/../src/Models' => app_path('Models'),
             __DIR__ . '/../src/Controller' => app_path('Http/Controllers'),
             __DIR__ . '/../migration' => database_path('migrations'),
-        ], 'crudzen');
+        ], 'crudone');
 
         // Load views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'crudzen');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'crudone');
 
         // Load migrations
         $this->loadMigrationsFrom(__DIR__ . '/../migration');
 
         // Merge config
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/crudzen.php', 'crudzen'
+            __DIR__ . '/../config/crudone.php', 'crudone'
         );
     }
 
     public function register()
     {
-        $this->app->singleton('crudzen', function ($app) {
-            return new CRUDZen;
+        $this->app->singleton('crudone', function ($app) {
+            return new CRUDOne;
         });
     }
 }
