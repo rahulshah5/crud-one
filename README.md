@@ -182,7 +182,3 @@ class Blog extends Model
 [MIT License](https://opensource.org/licenses/MIT)
 
 ```
-
-This README includes all key sections from your documentation with proper code formatting and Markdown structure. The file paths and code examples match those shown in your index.html documentation.
-
-Would you like me to add or modify any particular section?
