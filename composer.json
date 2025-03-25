@@ -1,7 +1,6 @@
 {
   "name": "rahulshah/crudone",
   "description": "A Laravel Livewire CRUD package with dynamic table and form handling",
-  "version": "1.0.0",
   "type": "library",
   "license": "MIT",
   "autoload": {
