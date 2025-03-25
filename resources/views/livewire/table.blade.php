@@ -237,7 +237,7 @@
                 </div>
                 <div class="p-4 pt-lg-4">
                     <div class="d-flex justify-content-between text-center flex-wrap gap-2 showing-wrap">
-                        {{ $values->links('vendor.pagination.default') }}
+                        {{ $values->links() }}
                     </div>
                 </div>
             @endif
